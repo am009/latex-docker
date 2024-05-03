@@ -8,6 +8,7 @@ A docker image for latex compilation. Aims to provide out-of-box compilation env
 
 Details:
 - Base image: Ubuntu 24.04
+- Install location: /usr/local/texlive/2024
 - Work directory: /root
 
 ## Usage
