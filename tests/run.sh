@@ -18,6 +18,5 @@ if [ -z "${1}" ]; then
         testone $folder
     done
 else
-    debugone $SCRIPTPATH/$1
+    testone $SCRIPTPATH/$1
 fi
-

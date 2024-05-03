@@ -6,6 +6,10 @@ set -e
 cp -r $SCRIPTPATH/* /tmp
 cd /tmp
 
-# compile the file main.tex to pdf
+# Compile the file main.tex to pdf
 # pdflatex -shell-escape main.tex -output-directory=/tmp -aux-directory=/tmp
+
+# Use latexmk to compile
 latexmk -pdf -interaction=nonstopmode -shell-escape main.tex
+# cleanup
+# latexmk -c
