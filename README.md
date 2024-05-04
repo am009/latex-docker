@@ -4,7 +4,7 @@ Docker hub: https://hub.docker.com/r/am009/latex
 
 ## Introduction
 
-A docker image for latex compilation. Aims to provide out-of-box compilation environment for most of the latex projects like overleaf. **If you have found any compilation issue using this image, please raise an issue here.**
+A docker image for latex compilation. Aims to provide out-of-box compilation environment for most of the latex projects like overleaf. **If you have found any compilation issue using this image, please raise an issue [here](https://github.com/am009/latex-docker/issues/new).**
 
 - Contains most of the common fonts and packages.
 
