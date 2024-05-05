@@ -26,4 +26,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: am009/latex:${{ github.ref_name }}
+          tags: am009/latex:latest,am009/latex:${{ github.ref_name }}
