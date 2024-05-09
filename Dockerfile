@@ -1,6 +1,6 @@
 FROM ubuntu:24.04
 
-# docker build . --tag am009/latex --build-arg UBUNTU_MIRROR=mirrors.ustc.edu.cn --build-arg PYTHON_MIRROR=pypi.tuna.tsinghua.edu.cn --build-arg TEXLIVE_MIRROR=https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/2023/tlnet-final
+# docker build . --tag am009/latex --build-arg UBUNTU_MIRROR=mirrors.ustc.edu.cn --build-arg PYTHON_MIRROR=pypi.tuna.tsinghua.edu.cn --build-arg TEXLIVE_MIRROR=https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet
 ARG UBUNTU_MIRROR
 # =mirrors.ustc.edu.cn
 ARG PYTHON_MIRROR
@@ -12,7 +12,7 @@ WORKDIR /root
 RUN if [[ ! -z "$UBUNTU_MIRROR" ]] ; then sed -i "s/archive.ubuntu.com/$UBUNTU_MIRROR/g" /etc/apt/sources.list.d/ubuntu.sources && \
  sed -i "s/security.ubuntu.com/$UBUNTU_MIRROR/g" /etc/apt/sources.list.d/ubuntu.sources ; fi && \
  apt update && DEBIAN_FRONTEND=noninteractive apt install -y --no-install-recommends jq wget curl make git unzip 7zip nano software-properties-common sudo pandoc procps locales debconf-utils inkscape \
- build-essential wget net-tools unzip time imagemagick optipng strace git python3 python3-pip python-is-python3 zlib1g-dev libpcre3-dev gettext-base libwww-perl ca-certificates curl gnupg qpdf python3-pygments && \
+ build-essential net-tools time imagemagick optipng strace git python3 python3-pip python-is-python3 zlib1g-dev libpcre3-dev gettext-base libwww-perl ca-certificates curl gnupg qpdf python3-pygments && \
  if [[ ! -z "$PYTHON_MIRROR" ]] ; then python3 -m pip config set global.index-url https://$PYTHON_MIRROR/simple ; fi && \
  apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
